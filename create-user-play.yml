@@ -1,0 +1,13 @@
+---
+- name: setting up webservers
+  hosts: all
+  gather_facts: true
+  become: true
+
+  tasks:
+  - name: Add the user 'spierman'
+    ansible.builtin.user:
+      name: spiderman
+      comment: "spiderman noway home"
+  
+
