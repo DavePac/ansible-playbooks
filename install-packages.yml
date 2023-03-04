@@ -1,0 +1,12 @@
+--- 
+- name: playbook to install project sofware tools
+  hosts: webservers
+  gather_facts: true
+  become: true
+
+
+  tasks:
+  - name: install nginx
+    yum:
+      name: nginx
+      state: latest
