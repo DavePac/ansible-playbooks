@@ -6,6 +6,10 @@
 
 
   tasks:
+  - name: install dependencies
+    yum:
+      name: epel-release
+      stme: present
   - name: install nginx
     yum:
       name: nginx
