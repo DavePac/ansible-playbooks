@@ -1,12 +1,23 @@
---- 
+---
 - name: playbook to deploy webapp
   hosts: webservers
-  gather_facts: true
   become: true
 
 
   tasks:
-  - name: install httpd
-    yum:
+  - name: Install the latest version of Apache
+    ansible.builtin.yum:
       name: httpd
       state: latest
+
+
+  - name: Start service httpd, if not started
+    ansible.builtin.service:
+      name: httpd
+      state: started
+
+      
+  - name: Copy using inline content
+    ansible.builtin.copy:
+      content: 'Hey there, we are learning Ansible!'
+      dest: /var/www/html/index.html
