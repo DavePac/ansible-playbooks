@@ -19,6 +19,6 @@
 
   - name: Copy using inline content
     ansible.builtin.copy:
-      content: 'Hey there, we are learning Ansible!'
+      # content: 'Hey there, we are learning Ansible!'
       src: /etc/ansible/ansible-playbooks/index.html
       dest: /var/www/html/index.html
